@@ -1,0 +1,202 @@
+body{
+	
+	
+	
+}
+
+
+#accses{
+  background-image: url(../images/bucket.jpg);
+  /*min-height: auto;*/
+  height: 100%;
+  width: 100;
+  margin: 0px;
+}
+
+@media (min-width: 992px)
+.col-md-4 {
+    width: 33.33333333%;
+    text-align: center;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    
+    /* border-radius: 4px; */
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    
+}
+
+#accordion .panel-heading {
+    padding: 0;
+}
+
+#accordion .panel-title>a {
+  display: block;
+  padding: 0.4em 0.6em;
+  outline: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#accordion .panel-title>a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before
+  {
+  content: "\e113";
+  float: left;
+  font-family: 'Glyphicons Halflings';
+  margin-right: 1em;
+}
+
+#accordion .panel-title>a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before
+  {
+  content: "\e114";
+}
+#accordion.panel-group .panel{
+  margin-top: 5px;
+}
+#accordion .actions_div > a {
+     font-size: 14px;
+    margin-right: 15px;
+}
+#accordion .actions_div > a.exit-btn {
+color:#dd4b39;
+}
+#accordion .remove_field.exit-btn{
+color:#dd4b39;
+margin-left:7px;
+float: left;
+}
+body{
+    padding-top: 100px;
+}
+form{
+	padding: 20px;
+	
+}
+h4{
+    text-align: center;
+}
+
+body{
+    padding-top: 100px;
+}
+form{
+  padding: 20px;
+  text-align: center;
+      width: 100%;
+
+}
+h4{
+    text-align: center;
+}
+.btn{
+  border-radius: 0px;
+}
+.form-control{
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+p{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 5px;}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.blue{
+  color: #337ab7;
+}
+.fa{
+  color: #337ab7;
+}
+
+.panel-default {
+    /*border-color: #ddd;*/}
+
+.panel {
+    /*margin-bottom: 20px;
+    background-color: #fff;
+     border: 1px solid transparent; 
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);*/
+}
+
+i{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+
+
+.flip {
+  -webkit-perspective: 800;
+perspective: 800;
+
+    position: relative;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+}
+.flip .card {
+
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+.flip .card .face {
+
+  -webkit-backface-visibility: hidden ;
+    backface-visibility: hidden ;
+  z-index: 2;
+   
+}
+.flip .card .front {
+  position: absolute;
+      text-align: center;
+   width: 100%;
+  z-index: 1;
+
+}
+.flip .card .back {
+  -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+}
+  .inner{margin:0px !important;}
+
+h2 {
+    font-family:arial;
+}
+
+form {
+    display: inline-block;
+}
+
+.list {
+	font-family:"Trebuchet MS";
+    font-size:20px;
+	color:#000000;
+    cursor:pointer;
+}

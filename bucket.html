@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bucketlists</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="accses">
+
+<!-- buckets list -->
+
+
+<div class="container_fluid">
+ <div class="container" style="background-image: url(../images.blist.jpg);">
+ <div class="col-md-2"></div>
+ <div class="col-md-8">
+    
+  
+    <!-- Horizontal Form -->
+  <div class="panel panel-success">
+    <div class="panel-header with-border">
+      <h2 class="panel-title text-center" style="color: #0e32ac; margin-top: 20px; text-decoration: underline;
+       font-size: 20px; ">BUCKET LIST ITEMS</h2>
+    </div>
+    <!-- /.panel-header -->
+    <!-- form start -->
+    <form class="form-horizontal" class="form-horizontal" method="post" action="logout.html">
+      <div class="panel-body">
+      
+          <div class="panel-group" id="accordion" role="tablist"
+            aria-multiselectable="true">
+          </div>
+          
+          <div class="text-center" style="margin-top:15px;">
+            <button class="btn btn-success" id="addButton" value=""><span class="glyphicon glyphicon-plus"></span> Add New Field</button>
+          </div>
+
+        
+      </div>
+      <!-- /.panel-body -->
+
+        <div class=" text-center">
+          <button class="btn btn-primary btn-block">LOG OUT</button> 
+        </div>
+
+   
+      <!-- /.box-footer -->
+    </form>
+  </div>
+
+</div>
+ </div>
+ <div class="col-md-2"></div>
+   
+ </div>
+  
+</div>
+ 
+<!-- end list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+      var counter = 1;
+      var wrapper = $("#accordion");
+  
+     $("#addButton").on("click", function(e){ 
+        e.preventDefault();
+        var catgName = prompt("Please Add your category name");
+      if(catgName == ''){
+        catgName = 'Catg#'+counter;
+      }
+      if(catgName != null){
+        var ariaExpanded = false;
+        var expandedClass = '';
+        var collapsedClass = 'collapsed';
+        if(counter==1){
+            ariaExpanded = true;
+            expandedClass = 'in';
+            collapsedClass = '';
+        }
+          $(wrapper).append('<div class="col-sm-12" style="margin-bottom: 0;"><div class="panel panel-default" id="panel'+ counter +'">' + 
+             '<div class="panel-heading" role="tab" id="heading'+ counter +'"><h4 class="panel-title">' +
+           '<a class="'+collapsedClass+'" id="panel-lebel'+ counter +'" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'+ counter +'" ' +
+           'aria-expanded="'+ariaExpanded+'" aria-controls="collapse'+ counter +'"> '+catgName+' </a><div class="actions_div" style="position: relative; top: -26px;">' +
+           '<a href="#" accesskey="'+ counter +'" class="remove_ctg_panel exit-btn pull-right"><span class="glyphicon glyphicon-remove"></span></a>' +
+           '<div id="collapse'+ counter +'" class="panel-collapse collapse '+expandedClass+'"role="tabpanel" aria-labelledby="heading'+ counter +'">'+
+           '<div class="panel-body"><div id="TextBoxDiv'+ counter +'"></div><a class="btn btn-xs btn-primary" accesskey="'+ counter +'" id="addButton3" ><span class="glyphicon glyphicon-plus"></span> Add New Attributes</a>' +
+           '<a class="btn btn-xs btn-success" accesskey="'+ counter +'" id="ajax_submit_button" >Done</a></div></div></div></div>');
+        counter++;
+      }
+      
+       });
+     
+    var x = 1; 
+       $(wrapper).on("click","#addButton2", function(e){
+           e.preventDefault();
+       var parentId = $(this).attr('accesskey');
+       var parentPanel = '#panel'+ parentId;
+       var catgName = prompt("Please Add your category name");
+       if(catgName == ''){
+        catgName = ' P#'+parentId+' Catg#'+counter;
+       }
+      if(catgName != null){
+        var ariaExpanded = false;
+        var expandedClass = '';
+        var collapsedClass = 'collapsed';
+      
+          $(wrapper).find(parentPanel).append('<div class="col-sm-12" style="margin-bottom: 0;"><div class="panel panel-default" id="panel'+counter+'">' + 
+             '<div class="panel-heading" role="tab" id="heading'+counter+'"><h4 class="panel-title">' +
+           '<a class="'+collapsedClass+'" id="panel-lebel'+ counter +'" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'+ counter+'" ' +
+           'aria-expanded="'+ariaExpanded+'" aria-controls="collapse'+ counter+'"> '+catgName+' </a><div class="actions_div" style="position: relative; top: -26px;">' +
+           '<a href="#" accesskey="'+counter +'" class="remove_ctg_panel exit-btn pull-right"><span class="glyphicon glyphicon-remove"></span></a>' +
+           '<a href="#" accesskey="'+ counter +'" class="edit_ctg_label pull-right"><span class="glyphicon glyphicon-edit"></span> Edit</a>' +
+           '<a href="#" accesskey="'+ counter +'" class="pull-right" id="addButton2"> <span class="glyphicon glyphicon-plus"></span> Add child category</a></h4></div>' +
+           '<div id="collapse'+ counter+'" class="panel-collapse collapse '+expandedClass+'"role="tabpanel" aria-labelledby="heading'+counter+'">'+
+           '<div class="panel-body"><div id="TextBoxDiv'+ counter +'"></div><a class="btn btn-xs btn-primary" accesskey="'+ counter +'" id="addButton3" ><span class="glyphicon glyphicon-plus"></span> Add New Attributes</a>' +
+           '<a class="btn btn-xs btn-success" accesskey="'+ counter +'" id="ajax_submit_button" >Done</a></div></div></div></div>');
+        
+        x++;
+        counter++;
+      }
+      
+       });
+     
+       $(wrapper).on("click",".remove_ctg_panel", function(e){ 
+         e.preventDefault(); 
+         var accesskey = $(this).attr('accesskey');
+            $('#panel'+accesskey).remove();
+        counter--;
+        x--;
+       });
+       
+     
+     
+     
+       var y = 1; 
+       $(wrapper).on("click","#addButton3", function(e){
+           e.preventDefault();
+       var accesskey = $(this).attr('accesskey');
+       y++; 
+       $('#panel'+accesskey).find('#TextBoxDiv'+accesskey).append('<div class="col-md-12 form-group"><input type="text" name="ctgtext[]" class="form-control" style="width: 40%;float: left;"/><a href="#" class="remove_field exit-btn"><span class="glyphicon glyphicon-remove"></a></div>');
+          
+       });
+       
+       $(wrapper).on("click",".remove_field", function(e){
+           e.preventDefault(); 
+        $(this).parent('div').remove();y--;
+       })
+      
+       $(wrapper).on("click",".edit_ctg_label", function(e){ 
+         var panelId = $(this).attr('accesskey');
+       var catgName = prompt("Please Change your category name");
+       if(catgName == ''){
+           return false;
+       }
+       if(catgName != null){
+         $('#panel'+panelId).find("#panel-lebel"+panelId).html('').html(catgName);
+       }
+        
+      
+     });
+  });
+
+
+    </script>
+
+</body>
+</html>
